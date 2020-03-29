@@ -10,6 +10,9 @@
   {% endfor %}
 
 {% endblock %}
+
+{% block title %}{{ article.title }}{% endblock title %}
+
 {% block twittercard %}
 {% if article.cover_image %}
 <meta name="twitter:card" content="summary_large_image">
@@ -79,6 +82,16 @@
         })();
       </script>
       <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      {% endif %}
+      {% if UTTERANCES_REPO %}
+      <script src="https://utteranc.es/client.js"
+        repo="{{ UTTERANCES_REPO }}"
+        issue-term="{{ UTTERANCES_MAPPING }}"
+        label="{{ UTTERANCES_LABEL }}"
+        theme="{{ UTTERANCES_THEME }}"
+        crossorigin="anonymous"
+        async>
+      </script>
       {% endif %}
     </article>
   </div>
