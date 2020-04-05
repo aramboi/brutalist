@@ -86,7 +86,7 @@
                 <ul>
                     {% if DISPLAY_PAGES_ON_MENU %}
                       {% for p in pages %}
-                        <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.slug }}</a></li>
+                        <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
                       {% endfor %}
                     {% endif %}
                     {% for title, link in MENUITEMS %}
@@ -106,6 +106,9 @@
                     {% endif %}
                     {% if TWITTER %}
                     <a href="{{ TWITTER }}" target="_blank"><div class="icon-twitter icon"></div></a>
+                    {% endif %}
+                    {% if LINKEDIN %}
+                    <a href="{{ LINKEDIN }}" target="_blank"><div class="icon-linkedin icon"></div></a>
                     {% endif %}
                     {% if INSTAGRAM %}
                     <a href="{{ INSTAGRAM }}" target="_blank"><div class="icon-instagram icon"></div></a>
